@@ -42,12 +42,12 @@ pwm6.start(0)
 
 #Define the angle and duty cycle limits for both servos
 min_angle4 = 0
-max_angle4 = 179
+max_angle4 = 180
 min_duty_cycle4 = 2.5
 max_duty_cycle4 = 12.5
 
 min_angle5 = 0
-max_angle5 = 179
+max_angle5 = 180
 min_duty_cycle5 = 2.5
 max_duty_cycle5 = 12.5
 
@@ -63,6 +63,7 @@ try:
         for event in pygame.event.get():
             if event.type == pygame.JOYBUTTONDOWN:
                 if event.button == 0:  # A button (button index may vary)
+                    print("button pressed")
                     # Rotate servo 1 to the left (counterclockwise)
                     pwm1.ChangeDutyCycle(5)  # Adjust this value as needed
                     pwm6.ChangeDutyCycle(5)  # Adjust this value as needed
