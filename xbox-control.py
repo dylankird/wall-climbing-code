@@ -142,6 +142,8 @@ try:
                 elif event.button in [4, 5]:
                     kit.servo[0].angle = 80     #Front steering servo
                     kit.servo[1].angle = 90     #Read steering servo
+
+
                     """
                     # Stop servo 1 when the button is released
                     pwm1.ChangeDutyCycle(0)
@@ -160,25 +162,31 @@ try:
                     # Move servo 3 to the right (clockwise)
                     #pwm3.ChangeDutyCycle(10)  # Adjust this value as needed
                     print("joystick move right")
+                    kit.servo[4].angle = 70 - 30     #Camera pan    
                 elif x == -1:
                     # Move servo 3 to the left (counterclockwise)
                     #pwm3.ChangeDutyCycle(5)  # Adjust this value as needed
                     print("joystick move left")
+                    kit.servo[4].angle = 70 + 30     #Camera pan    
                 else:
                     #pwm3.ChangeDutyCycle(0)  # Stop servo 3
                      print("joystick x release")                           
+                     kit.servo[4].angle = 70     #Camera pan    
 
                 if y == 1:
                     # Move servo 2 up
                     #pwm2.ChangeDutyCycle(10)  # Adjust this value as needed
                     print("joystick move up")
+                    kit.servo[5].angle = 150 - 30   #Camera tilt
                 elif y == -1:
                     # Move servo 2 down
                     #pwm2.ChangeDutyCycle(5)  # Adjust this value as needed
                     print("joystick move down")
+                    kit.servo[5].angle = 150 + 30   #Camera tilt
                 else:
                     #pwm2.ChangeDutyCycle(0)  # Stop servo 2
                     print("joystick y release")
+                    kit.servo[5].angle = 150    #Camera tilt
 
         time.sleep(0.01)
 
